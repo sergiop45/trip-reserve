@@ -1,0 +1,32 @@
+.home {
+    display: flex;
+    margin-top: 2rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: aquamarine;
+    margin: 0 1rem;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 1px solid #000;
+}
+.card img {
+    width: 80%;
+    margin-bottom: 1rem;
+}
+.card p {
+    font-weight: bold;
+    margin-bottom: .5rem;
+    font-size: 18px;
+}
+.card button {
+    padding: .5rem;
+    background-color: #000;
+    color: cadetblue;
+    border-radius: 4px;
+    cursor: pointer;
+}
