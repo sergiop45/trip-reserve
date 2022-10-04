@@ -1,0 +1,8 @@
+.reservas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.reservas img {
+    max-width: 300px;
+}
