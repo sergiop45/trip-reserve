@@ -1,20 +1,30 @@
 import React from 'react';
 import {MdDelete} from 'react-icons/md';
 import './style.css';
+import { useSelector } from 'react-redux/es/hooks/useSelector';
 
 const Reservas = () => {
+  const reservas = useSelector(state => state.reserve);
+  console.log("minhas reservas: ",reservas)
+
   return (
     <div>
-      <h1>Voce solicitou 1 reserva</h1>
+      <h1>Voce solicitou {reservas.length} reserva</h1>
 
-      <div className='reservas'>
+      {reservas.length > 0 ? reservas.map((reserva) => {
+        return(
+        <div className='reservas' key={reserva.id}>
         
-        <img src="https://sujeitoprogramador.com/wp-content/uploads/2019/12/maceio.jpg" alt="" />
-        <strong>Viagem a Macéio 7 dias</strong>
-        <span>Quantidade: 2</span>
-        <button onClick={() => {}}> <MdDelete/></button>
+          <img src={reserva.image} alt="" />
+          <strong>{reserva.title}</strong>
+          <span>Quantidade: 2</span>
+          <button onClick={() => {}}> <MdDelete/></button>
 
-      </div>
+      
+        </div>
+        )
+      }): <p>Carregando...</p>}
+      
     </div>
   )
 }

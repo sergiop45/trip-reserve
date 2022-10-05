@@ -1,6 +1,6 @@
 .navbar {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-around;
     list-style: none;
     background-color: #000;
     padding: 1rem;

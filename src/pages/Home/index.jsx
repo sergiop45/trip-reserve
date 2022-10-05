@@ -1,9 +1,11 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import './style.css';
+import { useDispatch } from 'react-redux/es/exports';
 
 const Home = () => {
     const [trips, setTrips] = useState([]);
+    const dispatch = useDispatch();
 
     async function getTrips() {
   
@@ -15,6 +17,13 @@ const Home = () => {
       })
       .catch((err) => {
         console.log(err)
+      });
+    }
+
+    function addTrip(trip) {
+      dispatch({
+        type: "ADD_RESERVA",
+        trip
       });
     }
   
@@ -32,7 +41,7 @@ const Home = () => {
               <img src={trip.image} alt="" />
               <h4>{trip.title}</h4>
               {trip.status ? <p>Status: Disponivel</p>:<p>Status:Indisponivel</p>}
-              <button>Reservar</button>
+              <button onClick={() => { addTrip(trip)}}>Reservar</button>
             </div>)
         }) : <p>Carregando...</p>}
       
