@@ -17,8 +17,8 @@ const Reservas = () => {
         
           <img src={reserva.image} alt="" />
           <strong>{reserva.title}</strong>
-          <span>Quantidade: 2</span>
-          <button onClick={() => {}}> <MdDelete/></button>
+          <span>Quantidade: {reserva.amount}</span>
+          <button onClick={() => {}}> <MdDelete size={20} color="#191919" /></button>
 
       
         </div>
